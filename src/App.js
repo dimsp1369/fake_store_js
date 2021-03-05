@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import {getProduct} from "./redux/action/productAction";
+import {connect} from "react-redux";
+import NavBar from "./NavBar";
+import {Route, Redirect} from "react-router-dom";
+import UserCart from "./UserCart";
+import Products from "./Products";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <div>
+            <NavBar/>
+            <Redirect to="/Products"/>
+            <div>
+                <Route path='/UserCart'
+                       render={() => <UserCart/>}/>
+            </div>
+            <div>
+                <Route path='/Products'
+                       render={() => <Products/>}/>
+            </div>
+        </div>
+    );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    products: state.storeReducer.product
+})
+
+export default connect(mapStateToProps, {getProduct})(App);

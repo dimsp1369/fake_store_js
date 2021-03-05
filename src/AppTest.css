@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", "Georgia", "sans-serif";
+}
+
+body {
+    background-color: #c1f6e4;
+    text-align: center;
+}
+
+.App {
+    max-width: 90%;
+    background-color: #f3efea;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product_block {
+    /*display: flex;*/
+    /*flex-basis: 80%;*/
+    /*flex-direction: column;*/
+    /*flex-wrap: wrap;*/
+    border: 1px cornflowerblue solid;
+    max-width: 90%;
+    padding: 10px;
+    margin: auto;
+}
+
+.product_el {
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-basis: 80%;*/
+}
+
+.product_img {
+    width: 20%;
+    height: 20%;
+}
